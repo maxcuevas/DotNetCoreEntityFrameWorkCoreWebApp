@@ -3,3 +3,5 @@
 ################################################################################
 
 /.vs
+/NetCoreEntityFrameWorkWebApp/bin/Debug/netcoreapp2.2
+/NetCoreEntityFrameWorkWebApp/obj
