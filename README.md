@@ -11,6 +11,7 @@ autogenerate the classes resembling the tables, and to add my dbcontext to my st
     -When trying install the EntityFrameworkCore Nuget Package and dependencies I was having a lot of trouble. People online said to install the [.NET CORE 2.2 SDK](https://dotnet.microsoft.com/download/dotnet-core/2.2#sdk-2.2.107) and that fixed my issues with installing Nuget Packages
     - Version 2.2.107 seems to be the last sdk version that can be used by vs2017. When you go to download an sdk, there may be a small disclaimer letting you know this is the case.
 3. Include the "microsoft.entityframeworkcore" nuget package to your project
+    -There is a [**Nuget** folder](./NetCoreEntityFrameWorkWebApp/Nuget) included with all of the required dependencies
 4. Create a database on the (localdb\MSSQLLocalDb) server
     1. Visual Studio Menu Bar > View > SQL Server Object Explorer
     2. A Pane titled "SQL Server Object Explorer" should appear
@@ -27,8 +28,8 @@ autogenerate the classes resembling the tables, and to add my dbcontext to my st
 6. Now we want to have EntityFrameWorkCore generate the classes from our tables in the database
     1. Visual Studio Menu Bar > Tools > NuGet Package Manager > Package Manager Console
     2. A pane should show up towards the bottom of the screen titled "Package Manager Console"
-    3. In the console copy and paste the following string without the quotation marks:
-    "Scaffold-DbContext "Server=(localdb)\mssqllocaldb;Database=EntityFrameWorkCoreDatabase;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models"
+    3. In the console copy and paste the following string:
+    ```Scaffold-DbContext "Server=(localdb)\mssqllocaldb;Database=EntityFrameWorkCoreDatabase;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models```
         - If you choose a different server or database name, fix them in the previous string before running
     4. Now you should have 2 classes generated for you in the **Models** folder in your project
         - EntityFrameWorkCoreDatabaseContext.s
